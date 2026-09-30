@@ -318,77 +318,92 @@ export default async function DetailPage({ params }: Props) {
   `;
 
   type PostData = {
+  id: string;
+  title: string;
+  slug: string;
+  date: string;
+  content: string;
+
+  featuredImage: {
+    node: {
+      sourceUrl: string;
+      altText: string;
+    } | null;
+  } | null;
+
+  tags: {
+    nodes: {
+      name: string;
+    }[];
+  } | null;
+
+  gallery: {
     id: string;
-    title: string;
-    slug: string;
-    date: string;
-    content: string;
-
-    featuredImage: {
-      node: {
-        sourceUrl: string;
-        altText: string;
-      } | null;
+    databaseId: number;
+    sourceUrl: string;
+    altText: string | null;
+    mediaDetails: {
+      width: number;
+      height: number;
     } | null;
+  }[];
 
-    tags: {
-      nodes: {
-        name: string;
-      }[];
-    } | null;
+  stats: {
+    label: string;
+    value: string | null;
+  }[];
 
+  galleryImages: {
     galleryImages: {
-      galleryImages: {
-        eventGalleryImage: {
-          node: {
-            id: string;
-            databaseId: number;
-            sourceUrl: string;
-            altText: string | null;
-            mediaDetails: {
-              width: number;
-              height: number;
-            } | null;
+      eventGalleryImage: {
+        node: {
+          id: string;
+          databaseId: number;
+          sourceUrl: string;
+          altText: string | null;
+          mediaDetails: {
+            width: number;
+            height: number;
           } | null;
         } | null;
-      }[];
-    } | null;
+      } | null;
+    }[];
+  } | null;
 
-    trekkingInformation: {
-      trekkingDistance: string | null;
-      trekkingDifficulty: string | null;
-      trekkingDuration: string | null;
-      trekkingElevation: string | null;
-    } | null;
+  trekkingInformation: {
+    trekkingDistance: string | null;
+    trekkingDifficulty: string | null;
+    trekkingDuration: string | null;
+    trekkingElevation: string | null;
+  } | null;
 
-    basicInformation: {
-      durationTime: string | null;
-      fieldGroupName: string | null;
-      locationDetails: string | null;
-      subHeadingInBannerImage: string | null;
-    } | null;
+  basicInformation: {
+    durationTime: string | null;
+    fieldGroupName: string | null;
+    locationDetails: string | null;
+    subHeadingInBannerImage: string | null;
+  } | null;
 
-    runningInformation: {
-      avgPace: string | null;
-      distance: string | null;
-      eventName: string | null;
-      finishTime: string | null;
-      location: string | null;
-      runningType: string | null;
-    } | null;
+  runningInformation: {
+    avgPace: string | null;
+    distance: string | null;
+    eventName: string | null;
+    finishTime: string | null;
+    location: string | null;
+    runningType: string | null;
+  } | null;
 
-    book: {
-      authorName: string | null;
-      bookRecommendedFor: string | null;
-      pages: number | null;
-      readIn: string | null;
-      year: number | null;
-    } | null;
+  book: {
+    authorName: string | null;
+    bookRecommendedFor: string | null;
+    pages: number | null;
+    readIn: string | null;
+    year: number | null;
+  } | null;
 
-    noNeedToDetailPage: {
-      noNeedToDetailPage: boolean | null;
-    } | null;
-
+  noNeedToDetailPage: {
+    noNeedToDetailPage: boolean | null;
+  } | null;
   };
 
   type PostResponse = {
