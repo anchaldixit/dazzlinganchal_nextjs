@@ -4,7 +4,7 @@ import { useState } from "react";
 import ActivityBadge from "../ActivityBadge";
 
 import {locations } from "@/app/data/content";
-
+import type { ActivityType } from "@/app/data/content";
 
 export default function AdventuresMap() {
     return (
