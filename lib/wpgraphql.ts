@@ -10,6 +10,9 @@ export async function fetchGraphQL<T>(
     headers: {
       "Content-Type": "application/json",
     },
+    next: {
+      revalidate: 3600,
+    },
     body: JSON.stringify({
       query,
       variables,
