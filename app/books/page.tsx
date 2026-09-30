@@ -243,7 +243,7 @@ export default function Books() {
 
 
             {/* Tags */}
-            {book.tags?.nodes?.length > 0 && (
+           {book.tags?.nodes?.length ? (
               <div className="flex flex-wrap gap-2 mb-6">
                 {book.tags.nodes.map((tag) => (
                   <span
@@ -254,7 +254,7 @@ export default function Books() {
                   </span>
                 ))}
               </div>
-            )}
+            ) : null}
 
 
             {/* Bottom information */}
