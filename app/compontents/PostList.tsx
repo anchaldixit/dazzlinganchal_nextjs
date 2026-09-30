@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import ActivityBadge from "@/app/compontents/ActivityBadge";
+import type { ActivityType } from "@/app/data/content";
 
 
 function cleanExcerpt(html: string, wordLimit = 20) {
@@ -141,6 +142,8 @@ export default function PostList({
     return () => observer.disconnect();
   }, [cursor, hasNextPage, loading]);
 
+
+
   const filteredPosts = posts.filter((post) =>
     post.categories.nodes.some((category) =>
       allowedCategories.includes(category.slug)
@@ -153,18 +156,17 @@ export default function PostList({
     <>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px  bg-border">
         {filteredPosts.map((post) => {
-          const category =
-            post.categories.nodes.find((cat) =>
-              allowedCategories.includes(cat.slug)
-            )?.slug || "journal";
+          const category = post.categories.nodes.find((cat) =>
+            allowedCategories.includes(cat.slug as ActivityType)
+          )?.slug as ActivityType;
 
           return (
             <div className="bg-cream p-6">
-            <Link
-              key={post.id}
-              href={`/${category}/${post.slug}`}
-              className="group block"
-            >
+              <Link
+                key={post.id}
+                href={`/${category}/${post.slug}`}
+                className="group block"
+              >
               <div className="overflow-hidden bg-muted aspect-[3/4]">
 
                     {post.featuredImage?.node?.sourceUrl ? (
