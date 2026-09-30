@@ -13,11 +13,11 @@ export default function AboutSection() {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="absolute -bottom-6 -right-6 bg-earth px-5 py-3 hidden md:block">
+              {/* <div className="absolute -bottom-6 -right-6 bg-earth px-5 py-3 hidden md:block">
                 <p className="font-mono text-xs tracking-[0.15em] uppercase text-cream">
                   Explorer
                 </p>
-              </div>
+              </div> */}
             </div>
 
             <div>
