@@ -243,11 +243,7 @@ export default function Books() {
 
 
             {/* Tags */}
-<<<<<<< Updated upstream
-           {book.tags?.nodes?.length ? (
-=======
             {book.tags?.nodes?.length ? (
->>>>>>> Stashed changes
               <div className="flex flex-wrap gap-2 mb-6">
                 {book.tags.nodes.map((tag) => (
                   <span
