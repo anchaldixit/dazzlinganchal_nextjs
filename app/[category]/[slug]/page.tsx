@@ -443,24 +443,24 @@ export default async function DetailPage({ params }: Props) {
 
     // Trekking specific data
     if (category === "trekking") {
-      pageData.stats = [
-        {
-          label: "Distance",
-          value: post.trekkingInformation?.trekkingDistance ?? null,
-        },
-        {
-          label: "Elevation",
-          value: post.trekkingInformation?.trekkingElevation ?? null,
-        },
-        {
-          label: "Difficulty",
-          value: post.trekkingInformation?.trekkingDifficulty ?? null,
-        },
-        {
-          label: "Duration",
-          value: post.trekkingInformation?.trekkingDuration ?? null,
-        },
-      ].filter((item) => item.value);
+      // pageData.stats = [
+      //   {
+      //     label: "Distance",
+      //     value: post.trekkingInformation?.trekkingDistance ?? null,
+      //   },
+      //   {
+      //     label: "Elevation",
+      //     value: post.trekkingInformation?.trekkingElevation ?? null,
+      //   },
+      //   {
+      //     label: "Difficulty",
+      //     value: post.trekkingInformation?.trekkingDifficulty ?? null,
+      //   },
+      //   {
+      //     label: "Duration",
+      //     value: post.trekkingInformation?.trekkingDuration ?? null,
+      //   },
+      // ].filter((item) => item.value);
     }
   }
 
