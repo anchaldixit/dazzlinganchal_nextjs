@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&display=swap');
+
+@import 'tailwindcss';
+
+@theme {
+  --color-cream: #FAF7F2;
+  --color-charcoal: #1C1C1A;
+  --color-earth: #8B6347;
+  --color-earth-light: #C4956A;
+  --color-muted: #EDE8DF;
+  --color-muted-fg: #6B6560;
+  --color-border: #D5CFC6;
+  --color-travel: #C17B3B;
+  --color-trek: #3B6B4F;
+  --color-run: #3B5068;
+
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "DM Sans", system-ui, sans-serif;
+  --font-mono: "DM Mono", "Courier New", monospace;
+}
+
+/* Global */
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: #FAF7F2;
+  color: #1C1C1A;
+  font-family: "DM Sans", system-ui, sans-serif;
+}
+
+/* HTML element defaults */
+
+h1 {
+  display: block;
+  font-size: 2em;
+  font-weight: bold;
+  margin-block: 0.67em;
+}
+
+h2 {
+  display: block;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-block: 0.83em;
+}
+
+h3 {
+  display: block;
+  font-size: 1.17em;
+  font-weight: bold;
+  margin-block: 1em;
+}
+
+h4 {
+  display: block;
+  font-weight: bold;
+  margin-block: 1.33em;
+}
+
+h5 {
+  display: block;
+  font-size: 0.83em;
+  font-weight: bold;
+  margin-block: 1.67em;
+}
+
+h6 {
+  display: block;
+  font-size: 0.67em;
+  font-weight: bold;
+  margin-block: 2.33em;
+}
+
+p {
+  display: block;
+  margin-block: 1em;
+  font-size: 12px;
+}
+
+ul {
+  display: block;
+  list-style-type: disc;
+  margin-block: 1em;
+  padding-inline-start: 40px;
+}
+
+ol {
+  display: block;
+  list-style-type: decimal;
+  margin-block: 1em;
+  padding-inline-start: 40px;
+}
+
+li {
+  display: list-item;
+}
+
+a {
+  /* color: -webkit-link; */
+  cursor: pointer;
+}
+
+strong,
+b {
+  font-weight: bold;
+}
+
+em,
+i {
+  font-style: italic;
+}
+
+blockquote {
+  display: block;
+  margin-block: 1em;
+  margin-inline: 40px;
+}
+
+hr {
+  display: block;
+  border-style: inset;
+  border-width: 1px;
+}
+
+pre {
+  display: block;
+  font-family: monospace;
+  white-space: pre;
+  margin-block: 1em;
+}
+
+/* Hide scrollbar */
+
+* {
+  scrollbar-width: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+.wp-video{
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-bottom: 10px;
+}
+.aligncenter {
+    text-align: center;
+    margin: 0 auto;
+}
