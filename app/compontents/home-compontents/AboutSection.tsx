@@ -44,7 +44,7 @@ export default function AboutSection() {
                 {[
                   { label: "Countries", value: "12" },
                   { label: "Treks", value: "24" },
-                  { label: "Marathons", value: "8" },
+                  { label: "Marathons", value: "9" },
                 ].map((s) => (
                   <div key={s.label}>
                     <p className="font-mono text-2xl text-charcoal">{s.value}</p>
