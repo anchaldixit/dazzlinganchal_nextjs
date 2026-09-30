@@ -423,13 +423,7 @@ export default async function DetailPage({ params }: Props) {
 
   if (post) {
     pageData = {
-      id: post.id,
-      title: post.title,
-      slug: post.slug,
-      date: post.date,
-      content: post.content,
-
-      featuredImage: post.featuredImage,
+      ...post,
 
       gallery:
         post.galleryImages?.galleryImages
@@ -703,19 +697,18 @@ export default async function DetailPage({ params }: Props) {
             )}
 
             {/* tags */}
-              {post.tags?.nodes?.length > 0 && (
-              <div className="flex flex-wrap gap-2 mb-6">
-
-                {post.tags.nodes.map((tag) => (
-                  <span
-                    key={tag.name}
-                    className="font-mono text-[9px] tracking-[0.15em] uppercase border border-border text-muted-fg px-2 py-0.5"
-                  >
-                    {tag.name}
-                  </span>
-                ))}
-              </div>
-            )}
+              {post?.tags?.nodes?.length ? (
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {post.tags.nodes.map((tag) => (
+                    <span
+                      key={tag.name}
+                      className="font-mono text-[9px] tracking-[0.15em] uppercase border border-border text-muted-fg px-2 py-0.5"
+                    >
+                      {tag.name}
+                    </span>
+                  ))}
+                </div>
+              ) : null}
       </div>
       </article>
 
@@ -793,5 +786,3 @@ export default async function DetailPage({ params }: Props) {
     </>
   );
 }
-
-
