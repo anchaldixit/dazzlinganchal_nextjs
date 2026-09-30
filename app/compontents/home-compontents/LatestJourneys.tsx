@@ -221,12 +221,11 @@ const allowedCategories: ActivityType[] = [
   "travel",
 ];
 
-
-  const filteredPosts = posts.filter((post) =>
-    post.categories.nodes.some((category) =>
-      allowedCategories.includes(category.slug)
-    )
-  );
+const filteredPosts = posts.filter((post) =>
+  post.categories.nodes.some((category) =>
+    allowedCategories.includes(category.slug as ActivityType)
+  )
+);
 
 
 export default function LatestJourneys() {
