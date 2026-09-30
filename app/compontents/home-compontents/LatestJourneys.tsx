@@ -1,11 +1,10 @@
 import Link from "next/link";
-import { journeys, locations } from "@/app/data/content";
 import ActivityBadge from "@/app/compontents/ActivityBadge";
 import JourneyCard from "@/app/compontents/JourneyCard";
 import { fetchGraphQL } from "@/lib/wpgraphql";
 import Image from "next/image";
 import PostList from "@/app/compontents/PostList";
-
+import { journeys, locations, type ActivityType } from "@/app/data/content";
 
 function cleanExcerpt(html: string, wordLimit = 20) {
   const text = html
@@ -215,9 +214,9 @@ const data = await fetchGraphQL<PostResponse>(
 
 const posts = data.posts.nodes;
 
-const allowedCategories = [
-   "books",
-   "trekking",
+const allowedCategories: ActivityType[] = [
+  "books",
+  "trekking",
   "running",
   "travel",
 ];
@@ -265,13 +264,13 @@ export default function LatestJourneys() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px  bg-border">
           {filteredPosts.map((post) => {
-          const category =
-            post.categories.nodes.find((cat) =>
-              allowedCategories.includes(cat.slug)
-            )?.slug || "journal";
+            const category: ActivityType =
+              (post.categories.nodes.find((cat) =>
+                allowedCategories.includes(cat.slug as ActivityType)
+              )?.slug as ActivityType) || "travel";
 
-              return (
-                <div className="bg-cream p-6">
+            return (
+              <div className="bg-cream p-6">
                 <Link
                   key={post.id}
                   href={`/${category}/${post.slug}`}
