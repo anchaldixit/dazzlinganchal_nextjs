@@ -785,8 +785,5 @@ export default async function DetailPage({ params }: Props) {
     </div>
     </>
   );
-<<<<<<< Updated upstream
 }
-=======
-}
->>>>>>> Stashed changes
+
