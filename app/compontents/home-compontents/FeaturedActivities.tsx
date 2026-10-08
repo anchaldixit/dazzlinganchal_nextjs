@@ -180,7 +180,7 @@ const FeaturedDataPosts = [
   })),
 ];
 
-export default function FeaturedActivities() {
+export default async function FeaturedActivities() {
   return (
     <section className="py-1 max-w-7xl mx-auto px-6">
 

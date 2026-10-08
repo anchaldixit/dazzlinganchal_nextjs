@@ -100,10 +100,11 @@ const treksData = await fetchGraphQL<TrekkingPostsResponse>(
   }
 );
 
-const runningPosts = treksData.posts.nodes;
  
 
-export default function Running() {
+export default async function Running() {
+  const runningPosts = treksData.posts.nodes;
+
   return (
     <div className="bg-cream text-charcoal">
       {/* Hero */}

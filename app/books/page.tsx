@@ -94,7 +94,6 @@ query GetBookPosts {
     `,
 );
 
-const reviewBooks = booksData.posts.nodes;
 
 
 
@@ -110,7 +109,9 @@ function StarRating({ rating }: { rating: number }) {
   );
 }
 
-export default function Books() {
+export default async function Books() {
+  const reviewBooks = booksData.posts.nodes;
+
   return (
     <div className="bg-cream text-charcoal">
       {/* Hero */}

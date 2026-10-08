@@ -190,10 +190,11 @@ const data = await fetchGraphQL<PostResponse>(
   }
 );
 
-const posts = data.posts.nodes;
 
 
-export default function Journal() {
+export default async function Journal() {
+  const posts = data.posts.nodes;
+
   const [featured, ...rest] = journeys;
 
   return (

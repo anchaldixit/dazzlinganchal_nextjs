@@ -228,7 +228,7 @@ const filteredPosts = posts.filter((post) =>
 );
 
 
-export default function LatestJourneys() {
+export default async function LatestJourneys() {
   const [featured, ...rest] = journeys;
 
   return (

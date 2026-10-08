@@ -9,6 +9,12 @@ const navLinks = [
   { label: "About", to: "/about" },
 ];
 
+const socialLinks = [
+  { label: "Instagram", to: "https://www.instagram.com/dazzlinganchal/" },
+  { label: "Facebook", to: "https://www.facebook.com/anchaldixit11/" },
+  { label: "Strava", to: "https://www.strava.com/athletes/anchal_dixit" },
+];
+
 export default function Footer() {
   return (
     <footer className="bg-charcoal text-cream/70 pt-16 pb-10">
@@ -49,15 +55,17 @@ export default function Footer() {
               Find me
             </h4>
             <div className="flex flex-col gap-3">
-              {["Instagram", "Strava", "YouTube"].map((s) => (
-                <a
-                  key={s}
-                  href="#"
-                  className="text-sm text-cream/60 hover:text-cream transition-colors"
+
+                 {socialLinks.map((link) => (
+                <Link
+                  key={link.to}
+                  href={link.to}
+                  className="text-sm text-cream/60 hover:text-cream transition-colors"  target="_blank"
                 >
-                  {s}
-                </a>
+                  {link.label}
+                </Link>
               ))}
+
             </div>
           </div>
         </div>
